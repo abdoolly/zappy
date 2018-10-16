@@ -1,27 +1,51 @@
-# ZappFront
+# Zappy Front
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.5.
+## Prerequisites
 
-## Development server
+- make sure you have installed docker in your machine
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Front Installation  Steps
+first install the needed dependencies using this command
+```
+npm install
+```# Zappy
 
-## Code scaffolding
+## Prerequisites
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- make sure you have installed docker in your machine
 
-## Build
+## Front-End Installation  Steps
+first install the needed dependencies using this command
+```
+npm install
+```
+then we will build the docker image which will serve our app using this command
+( the dot at the end is intended)
+```
+docker build -t my-apache2 .
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+then just run this command to build and serve the application
+```
+npm run serve
+```
+then we will build the docker image which will serve our app using this command
+( the dot at the end is intended)
+```
+docker build -t my-apache2 .
+```
 
-## Running unit tests
+then just run this command to build the application
+```
+npm run build
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+then to serve the app run you can also change the port to whatever port you like to serve the app on
+```
+docker run -dit --name zapp_front_container -p 4200:80 zappfront
+```
 
-## Running end-to-end tests
+after that command runs successfully you will be able to access your app on that link
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+http://localhost:4200
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
