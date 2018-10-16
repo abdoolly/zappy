@@ -1,10 +1,18 @@
 slack account and workspace
-
 app-name : zappyDemo
-
 workspace url : zappedemo
 
+slack event subscription page:
+https://api.slack.com/apps/ADF2RRTNG/event-subscriptions?
 
+full explanation if the event api integration process:
+https://api.slack.com/events-api#permission_model
+
+to be able to make slack call me i will use ngrok then i will change it later on
+https://ngrok.com/
+
+to run a localhost https and public to use for integrating with slack and twitter if needed
+ngrok http 3000
 
 
 twitter integration :
@@ -13,6 +21,9 @@ https://developer.twitter.com/en/docs/tweets/timelines/api-reference/get-statuse
 
 other helping links
 https://developer.twitter.com/en/docs/basics/developer-portal/overview
+
+user authentication in twitter
+https://developer.twitter.com/en/docs/basics/authentication/overview/oauth
 
 twitter account:
 email : elgenius3000@gmail.com
