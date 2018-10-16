@@ -1,0 +1,21 @@
+slack account and workspace
+
+app-name : zappyDemo
+
+workspace url : zappedemo
+
+
+
+
+
+
+twitter integration :
+
+https://developer.twitter.com/en/docs/tweets/timelines/api-reference/get-statuses-user_timeline.html
+
+other helping links
+https://developer.twitter.com/en/docs/basics/developer-portal/overview
+
+twitter account:
+email : elgenius3000@gmail.com
+password : 12344321
