@@ -38,7 +38,7 @@ module.exports = env => {
                 ]
             }]
         },
-        plugins: env && !env.production ? [
+        plugins: !env ? [
             new ReloadServerPlugin({
                 script: "build/compiled",
             }),

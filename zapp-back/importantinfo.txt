@@ -16,7 +16,6 @@ ngrok http 3000
 
 
 twitter integration :
-
 https://developer.twitter.com/en/docs/tweets/timelines/api-reference/get-statuses-user_timeline.html
 
 other helping links
@@ -28,3 +27,7 @@ https://developer.twitter.com/en/docs/basics/authentication/overview/oauth
 twitter account:
 email : elgenius3000@gmail.com
 password : 12344321
+
+
+// just spare
+"start:prod": "npm run build;node build/compiled"

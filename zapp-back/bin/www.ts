@@ -4,6 +4,10 @@
 import * as app from '../app';
 import * as http from 'http';
 import * as debug from 'debug';
+import { connection } from '../server/serviceProviders/Database/dbConnection';
+
+// just using the connection for it to start working
+connection;
 
 // binding to console
 let log = debug('modern-express:server');
