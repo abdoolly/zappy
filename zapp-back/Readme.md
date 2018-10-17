@@ -1,9 +1,86 @@
 # Zappy Back
 
+
 ## Installation
 
 all you need to do is just run this command and everything will be working properly
 
 ```
 sudo docker-composer up -d
+```
+
+# API Reference
+
+## Slack Webhook
+
+```
+POST /api/slack/message
+```
+this api will be used as a webhook for slack to send the message events which 
+we will put the database.
+
+Example Request from Slack
+```
+{
+    "token": "TshFAl4NkCIonCi542APojzW",
+    "team_id": "TDF7U08KC",
+    "api_app_id": "ADF2RRTNG",
+    "event": {
+        "type": "message",
+        "user": "UDEKBRC65",
+        "text": "go",
+        "client_msg_id": "1c0a7d35-7203-4e68-a481-d8d060be88cf",
+        "ts": "1539813338.000100",
+        "channel": "CDEFG617S",
+        "event_ts": "1539813338.000100",
+        "channel_type": "channel"
+    },
+    "type": "event_callback",
+    "event_id": "EvDJ1B3U06",
+    "event_time": 1539813338,
+    "authed_users": [
+        "UDEKBRC65"
+    ]
+}
+```
+
+## Get Tweets
+
+```
+GET /api/twitter/tweets
+```
+
+This api receives just query param for the user you want to get his tweets 
+ex: request 
+
+```
+/api/twitter/tweets?screenName=man_zappy
+```
+This will get all tweets for the user man_zappy
+
+### Example response
+
+```
+{
+   "tweets": [
+      {
+         "_id": "5bc7b0184f068d027bfdaa62",
+         "tweet": "A laughing tweet 😄😄🤣🤣",
+         "screenName": "man_zappy",
+         "tweetId": "1052679741101223936"
+      },
+      {
+         "_id": "5bc7afdc4f068d027bfdaa54",
+         "tweet": "new TWeet say hello",
+         "screenName": "man_zappy",
+         "tweetId": "1052679540357718017"
+      },
+      {
+         "_id": "5bc74e9e027a3e002a0dd211",
+         "tweet": "another 1.3",
+         "screenName": "man_zappy",
+         "tweetId": "1052575136627404801"
+      }
+   ]
+}
 ```
