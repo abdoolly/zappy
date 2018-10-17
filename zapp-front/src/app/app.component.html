@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<!-- <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
@@ -16,5 +16,37 @@
   <li>
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
-</ul>
+</ul> -->
 
+<img src="assets/imgs/load.gif" class="loading" *ngIf="loading">
+<div class="container">
+
+  <div class="NavBar">
+    <!-- input to type screen name , button to load new tweets , -->
+
+    <div class="left-side">
+      <h1>ZAPPY</h1>
+    </div>
+
+    <div class="right-side">
+      <!-- <input class="form-input" type="text" placeholder="Enter your twitter id ex: @zappy"> -->
+      <button class="btn" (click)="getTweets()">Get Tweets</button>
+    </div>
+
+  </div>
+
+  <div class="myList">
+
+    <div *ngFor="let tweet of tweets" class="list_item">
+      <strong>{{ tweet.screenName}}</strong>
+      <p>{{ tweet.tweet }}</p>
+    </div>
+
+    <!-- <div class="list_item border-btm">
+      <strong>@man_zappy</strong>
+      <p>The tweeet will be right here</p>
+    </div> -->
+
+  </div>
+
+</div>

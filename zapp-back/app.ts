@@ -5,6 +5,7 @@ import * as bodyParser from 'body-parser';
 import * as root from 'app-root-path';
 import * as cookieParser from 'cookie-parser';
 import * as routes from './server/routes';
+import * as cors from 'cors';
 
 const app = express();
 
@@ -19,6 +20,15 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(cookieParser());
+
+
+/**
+ * @description putting the allow origin header
+ */
+app.use(cors({
+    // this should be changed later to the certain front host name
+    // origin: ''
+}));
 
 app.use('/', routes);
 
@@ -42,12 +52,13 @@ if (app.get('env') === 'development') {
     });
 }
 
-app.use(function(err: any, req: express.Request, res: express.Response, next: Function) {
+app.use(function (err: any, req: express.Request, res: express.Response, next: Function) {
     res.status(err.status || 500);
     res.render('error', {
         message: err.message,
         error: {}
     });
 });
+
 
 export = app;

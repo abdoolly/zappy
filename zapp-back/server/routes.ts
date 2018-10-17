@@ -1,12 +1,12 @@
 import { NextFunction, Request, Response, Router } from 'express';
 import { twitterServiceProvider } from './serviceProviders/APIs/twitterServiceProvider';
+import { Tweet } from './serviceProviders/Database/TweetsRepository';
 const router = Router();
 
 
 router.get('/', async (req: Request, res: Response, next: NextFunction) => {
-    return res.send({ a: 1 });
+    return res.render('index', { title: 'Zappy Backend is working...' });
 });
-
 
 /**
  * slack url
@@ -26,12 +26,14 @@ router.post('/api/slack/message', async (req: Request, res: Response, next: Next
     if (text.toLowerCase() === 'go') {
         let twitterProvider = new twitterServiceProvider();
         await twitterProvider.saveTweets();
-        console.log('He said GO');
-        // do some twitter action here
     }
 
     return res.send({});
 });
 
+router.get('/api/twitter/tweets', async (req: Request, res: Response, next: NextFunction) => {
+    let tweets = await Tweet.find({ screenName: req.param('screenName') });
+    return res.send({ tweets: tweets.reverse(), length: tweets.length });
+});
 
 export = router;

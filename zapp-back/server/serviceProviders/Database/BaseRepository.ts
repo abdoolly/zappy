@@ -57,5 +57,7 @@ export class BaseRepository<creationInterface, returnedInterface> {
         return objects;
     }
 
-    async find(...param: any[]): Promise<any> { }
+    async find(object?: creationInterface): Promise<Document[]> {
+        return await this.model.find(object || {});
+    }
 }
