@@ -10,4 +10,4 @@ This is a project that integrates with slack and listen to it's message apis whe
 ### [Zappy backend documentation](https://github.com/abdoolly/zappy/tree/master/zapp-back) 
 
 
-###  [Zappy Frontend documentation](https://github.com/abdoolly/zappy/tree/master/zapp-back)
+###  [Zappy Frontend documentation](https://github.com/abdoolly/zappy/tree/master/zapp-front)
