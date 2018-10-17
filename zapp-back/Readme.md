@@ -19,7 +19,7 @@ POST /api/slack/message
 this api will be used as a webhook for slack to send the message events which 
 we will put the database.
 
-Example Request from Slack
+### Example Request from Slack
 ```
 {
     "token": "TshFAl4NkCIonCi542APojzW",
@@ -44,6 +44,8 @@ Example Request from Slack
 }
 ```
 
+and then just respond with 200 status
+
 ## Get Tweets
 
 ```
@@ -51,7 +53,8 @@ GET /api/twitter/tweets
 ```
 
 This api receives just query param for the user you want to get his tweets 
-ex: request 
+
+### Example request
 
 ```
 /api/twitter/tweets?screenName=man_zappy
