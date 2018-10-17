@@ -5,6 +5,8 @@ import * as app from '../app';
 import * as http from 'http';
 import * as debug from 'debug';
 import { connection } from '../server/serviceProviders/Database/dbConnection';
+import { BaseException } from '../server/exceptions/BaseException';
+import { ErrorLog } from '../server/serviceProviders/Database/ErrorLogRepository';
 
 // just using the connection for it to start working
 connection;
@@ -79,4 +81,15 @@ server.on('listening', () => {
     const addr = server.address();
     const bind = (typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`);
     log(`Listening on ${bind}`);
+});
+
+/**
+ * global promise rejection error handler
+ */
+process.on('unhandledRejection', async function (errInstance: BaseException, p) {
+    if (!errInstance.myerror)
+        return console.error('Error', errInstance);
+
+    await ErrorLog.create({ message: errInstance.message, stack: errInstance.stack });
+    console.log('errInstance', errInstance);
 });
