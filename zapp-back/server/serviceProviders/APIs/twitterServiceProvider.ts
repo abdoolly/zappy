@@ -7,11 +7,11 @@ let requestDebug = require('request-debug');
 export class twitterServiceProvider {
     private utils = new generalUtils();
 
-    private consumerKey = 'LyZ0fu7v7l2tE2OLiZOS4VGaz';
-    private consumerSecretKey = 'WyiS2HZaIcJQLcsYiiv2vIaMOpomjD8fQ5yF8RVBuKvJducbjX';
-    private accessToken = '107007348-V377OHOkxtFIDRJX68MwrngWdDuWMSGBmoxJdcnw';
-    private accessTokenSecret = 'wW4inWMBrnvXjGat4SuUnhbjPwg7afdbDLIHDzkkGZUKz';
-    private myUserScreenName = 'man_zappy';
+    public consumerKey = 'LyZ0fu7v7l2tE2OLiZOS4VGaz';
+    public consumerSecretKey = 'WyiS2HZaIcJQLcsYiiv2vIaMOpomjD8fQ5yF8RVBuKvJducbjX';
+    public accessToken = '107007348-V377OHOkxtFIDRJX68MwrngWdDuWMSGBmoxJdcnw';
+    public accessTokenSecret = 'wW4inWMBrnvXjGat4SuUnhbjPwg7afdbDLIHDzkkGZUKz';
+    public myUserScreenName = 'man_zappy';
 
     async getTweets(screenName: string = null): Promise<TweetInterface[]> {
 

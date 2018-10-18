@@ -6,8 +6,12 @@ import * as root from 'app-root-path';
 import * as cookieParser from 'cookie-parser';
 import * as routes from './server/routes';
 import * as cors from 'cors';
+import { connection } from './server/serviceProviders/Database/dbConnection';
 
 const app = express();
+
+// just using the connection for it to start working
+connection;
 
 // view engine setup
 app.set('views', `${root}/server/views/`);

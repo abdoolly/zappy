@@ -23,7 +23,8 @@ router.post('/api/slack/message', async (req: Request, res: Response, next: Next
     // get the event text
     let { text } = event;
 
-    if (text.toLowerCase() === 'go') {
+    if (text.toLowerCase().indexOf(' go ') !== -1 || text.toLowerCase() == 'go') {
+        console.log('They said GO');
         let twitterProvider = new twitterServiceProvider();
         await twitterProvider.saveTweets();
     }
@@ -32,7 +33,7 @@ router.post('/api/slack/message', async (req: Request, res: Response, next: Next
 });
 
 router.get('/api/twitter/tweets', async (req: Request, res: Response, next: NextFunction) => {
-    let tweets = await Tweet.find({ screenName: req.param('screenName') });
+    let tweets = await Tweet.find({ screenName: req.query.screenName });
     return res.send({ tweets: tweets.reverse(), length: tweets.length });
 });
 

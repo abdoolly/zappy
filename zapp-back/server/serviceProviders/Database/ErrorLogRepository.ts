@@ -2,7 +2,7 @@ import { ErrorLogInterface } from "../../../intefaces/models/ErrorLog";
 import { ErrorLogModel } from "../../models/ErrorLog";
 import { BaseRepository } from "./BaseRepository";
 
-class ErrorLogRepository extends BaseRepository<any, any> {
+export class ErrorLogRepository extends BaseRepository<any, any> {
     model = ErrorLogModel;
 }
 

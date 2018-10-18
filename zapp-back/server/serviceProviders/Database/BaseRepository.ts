@@ -47,8 +47,13 @@ export class BaseRepository<creationInterface, returnedInterface> {
      */
     async createBulk(objects: creationInterface[]) {
         let isValid = Array.isArray(objects) && objects.length;
-        if (isValid)
-            await this.model.collection.insertMany(objects);
+        if (isValid) {
+            try {
+                await this.model.collection.insertMany(objects);
+            } catch (err) {
+
+            }
+        }
 
         // if the input was invalid then throw an exception
         if (!isValid)

@@ -2,7 +2,7 @@ import { TweetInterface } from "../../../intefaces/models/Tweet";
 import { TweetModel } from "../../models/Tweet";
 import { BaseRepository } from "./BaseRepository";
 
-class TweetsRepository extends BaseRepository<any, any> {
+export class TweetsRepository extends BaseRepository<any, any> {
     model = TweetModel;
 }
 
