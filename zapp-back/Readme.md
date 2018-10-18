@@ -87,3 +87,12 @@ This will get all tweets for the user man_zappy
    ]
 }
 ```
+
+## How to run the unit tests
+
+for unit tests to work properly you should run them inside the docker container holding the 
+backend using this command
+
+```
+npm run testall
+```

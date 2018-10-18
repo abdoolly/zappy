@@ -11,7 +11,9 @@ import { connection } from './server/serviceProviders/Database/dbConnection';
 const app = express();
 
 // just using the connection for it to start working
-connection;
+connection({
+    host: 'mongo',
+});
 
 // view engine setup
 app.set('views', `${root}/server/views/`);
