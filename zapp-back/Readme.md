@@ -96,3 +96,38 @@ backend using this command
 ```
 npm run testall
 ```
+
+## Run full cycle locally
+
+- to make you backend locally public you need to install a tool called ngrok
+which you can dowload from [here](https://ngrok.com/download)
+
+- make sure that you have run the docker compose command above to initiate the server it will open on port 3000
+
+- just make that command to make your server public 
+
+```
+ngrok http 3000
+```
+
+this will make ngrok makes your localhost public and provide you with 2 urls an http and https
+
+- first sigin in to slack using this credentials:
+workspace name : zappedemo
+
+email : elgenius3000@gmail.com
+
+password: 12344321
+
+
+- then go to this url 
+
+[https://api.slack.com/apps/ADF2RRTNG/event-subscriptions?](https://api.slack.com/apps/ADF2RRTNG/event-subscriptions?)
+
+when you run the command above the urls will appear take the https url copy and paste it in the 
+
+slack application so, it became a registered webhook there
+
+
+
+
