@@ -16,15 +16,15 @@ open file src/app/services/twitter/tweeter-service.service.ts
 
 and change the baseUrl value to your backend then continue with the steps below
 
+then just run this command to build the application
+```
+npm run build
+```
+
 then we will build the docker image which will serve our app using this command
 ( the dot at the end is intended)
 ```
 docker build -t zappfront .
-```
-
-then just run this command to build the application
-```
-npm run build
 ```
 
 then to serve the app run you can also change the port to whatever port you like to serve the app on
