@@ -24,7 +24,6 @@ router.post('/api/slack/message', async (req: Request, res: Response, next: Next
     let { text } = event;
 
     if (text.toLowerCase().indexOf(' go ') !== -1 || text.toLowerCase() == 'go') {
-        console.log('They said GO');
         let twitterProvider = new twitterServiceProvider();
         await twitterProvider.saveTweets();
     }
