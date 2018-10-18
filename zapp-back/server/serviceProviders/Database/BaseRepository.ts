@@ -24,6 +24,9 @@ export class BaseRepository<creationInterface, returnedInterface> {
             throw new UnsetModelInstanceException(this.getClassName());
     }
 
+    /**
+     * @description function that gets the class name to be used in error reporting
+     */
     protected getClassName(): string {
         return Object.getPrototypeOf(this).constructor.name;
     }
@@ -62,6 +65,10 @@ export class BaseRepository<creationInterface, returnedInterface> {
         return objects;
     }
 
+    /**
+     * @description find according to condition
+     * @param object 
+     */
     async find(object?: creationInterface): Promise<Document[]> {
         return await this.model.find(object || {});
     }

@@ -7,12 +7,22 @@ let requestDebug = require('request-debug');
 export class twitterServiceProvider {
     private utils = new generalUtils();
 
+    /**
+     * main twitter keys
+     */
     public consumerKey = 'LyZ0fu7v7l2tE2OLiZOS4VGaz';
     public consumerSecretKey = 'WyiS2HZaIcJQLcsYiiv2vIaMOpomjD8fQ5yF8RVBuKvJducbjX';
     public accessToken = '107007348-V377OHOkxtFIDRJX68MwrngWdDuWMSGBmoxJdcnw';
     public accessTokenSecret = 'wW4inWMBrnvXjGat4SuUnhbjPwg7afdbDLIHDzkkGZUKz';
+
     public myUserScreenName = 'man_zappy';
 
+    /**
+     * @description this function get the tweets from twitter screenname is optional because there is a default
+     * screenName which will be used 
+     * @param screenName 
+     * @returns an array of tweets
+     */
     async getTweets(screenName: string = null): Promise<TweetInterface[]> {
 
         let client = new Twitter({
@@ -34,6 +44,11 @@ export class twitterServiceProvider {
         }
     }
 
+    /**
+     * @description this function is independent because in the future maybe we will want to customize 
+     * how are we gonna get the screen name
+     * @param screenName 
+     */
     getScreenName(screenName: string = null) {
         if (screenName)
             return screenName;
@@ -41,6 +56,10 @@ export class twitterServiceProvider {
         return this.myUserScreenName;
     }
 
+    /**
+     * @description this function just get the tweets and save them in the database
+     * its called when slack send us a 'go' message
+     */
     async saveTweets() {
         let tweets = await this.getTweets();
         return await Tweet.createBulk(tweets);
