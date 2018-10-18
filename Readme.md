@@ -15,7 +15,7 @@ This is a project that integrates with slack and listen to it's message apis whe
 
 ## How to test
 
-### Project is hosted now here([https://google.com])
+### Project is hosted now [here]([https://google.com])
 
 #### Please join this slack workspace to be able to send the go message : https://zappedemo.slack.com
 
