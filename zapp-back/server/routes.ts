@@ -23,6 +23,7 @@ router.post('/api/slack/message', async (req: Request, res: Response, next: Next
     // get the event text
     let { text } = event;
 
+    // if go was included then fetch from twitter
     if (text.toLowerCase().indexOf(' go ') !== -1 || text.toLowerCase() == 'go') {
         let twitterProvider = new twitterServiceProvider();
         await twitterProvider.saveTweets();
