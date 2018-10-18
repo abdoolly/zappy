@@ -110,23 +110,40 @@ which you can dowload from [here](https://ngrok.com/download)
 ngrok http 3000
 ```
 
-this will make ngrok makes your localhost public and provide you with 2 urls an http and https
+this will make ngrok makes your localhost public and provide you with 2 urls an http and https when you run the command above the urls will appear take the https url copy it.
 
-- first sigin in to slack using this credentials:
+
+
+### first sigin in to slack using this credentials:
+
+[click to open slack](https://slack.com/signin)
+
 workspace name : zappedemo
 
 email : elgenius3000@gmail.com
 
 password: 12344321
 
-
-- then go to this url 
+### then go to this url 
 
 [https://api.slack.com/apps/ADF2RRTNG/event-subscriptions?](https://api.slack.com/apps/ADF2RRTNG/event-subscriptions?)
 
-when you run the command above the urls will appear take the https url copy and paste it in the 
+### Now you should change Request Url which is our webhook for slack
 
-slack application so, it became a registered webhook there
+click change button
+
+then paste the url followed by this /api/slack/message
+
+```
+ex: https://075dbc40.ngrok.io/api/slack/message
+```
+
+slack will then verify the link by sending a challenge it should be verified successfully
+
+now just click save change at the bottom which will change the url to your new url
+
+
+now you are ready to test everything :D 
 
 
 
