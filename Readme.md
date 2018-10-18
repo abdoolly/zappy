@@ -24,3 +24,6 @@ This is a project that integrates with slack and listen to it's message apis whe
 email : elgenius3000@gmail.com
 
 password : 12344321
+
+any tweets you make on that account by clicking on the button Get Tweets in the project url page 
+you will see them there 
