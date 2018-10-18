@@ -9,6 +9,13 @@ first install the needed dependencies using this command
 ```
 npm install
 ```
+
+then dont forget to change the backend url to your backend url
+
+open file src/app/services/twitter/tweeter-service.service.ts
+
+and change the baseUrl value to your backend then continue with the steps below
+
 then we will build the docker image which will serve our app using this command
 ( the dot at the end is intended)
 ```
