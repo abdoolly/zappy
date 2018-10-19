@@ -1,0 +1,8 @@
+app:
+  container_name: zappfront
+  restart: always
+  build: .
+  ports:
+    - "4200:80"
+  volumes:
+    - ./dist/zapp-front:/usr/local/apache2/htdocs/

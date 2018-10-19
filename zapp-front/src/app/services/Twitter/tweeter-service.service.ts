@@ -7,7 +7,7 @@ import { Tweet } from '../../interfaces/Tweet';
 })
 export class TweeterService {
 
-  baseUrl = 'https://70e24512.ngrok.io';
+  baseUrl = 'https://5a27d927.ngrok.io';
 
   constructor(private http: HttpClient) { }
 

@@ -20,16 +20,10 @@ then just run this command to build the application
 ```
 npm run build
 ```
+then just run this command to serve the app
 
-then we will build the docker image which will serve our app using this command
-( the dot at the end is intended)
 ```
-docker build -t zappfront .
-```
-
-then to serve the app run you can also change the port to whatever port you like to serve the app on
-```
-docker run -dit --name zapp_front_container -p 4200:80 zappfront
+sudo docker-composer up -d
 ```
 
 after that command runs successfully you will be able to access your app on that link
